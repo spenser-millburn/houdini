@@ -1,4 +1,5 @@
+FROM alpine
 
-FROM python:latest
+RUN apk add --no-cache bc
 
-RUN python -c 'import random; print(random.randint(100, 10000))' 
+CMD echo "scale=16; 4*a(1)" | bc -
